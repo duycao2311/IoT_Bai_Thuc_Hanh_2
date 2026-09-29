@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "author": "PTIT - IoT Lab 2",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 76.8, "left": -311.96, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -47.7,
+      "left": -63,
+      "attrs": { "temperature": "25", "humidity": "50" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 166.4,
+      "left": -584.8,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led",
+      "top": 150,
+      "left": -159.4,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 195.95,
+      "left": -172.8,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "esp:3V3", "cyan", [ "h-259.2", "v19.2", "h-0.15" ] ],
+    [ "dht1:SDA", "esp:15", "green", [ "v0" ] ],
+    [ "dht1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "ldr1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "ldr1:GND", "esp:GND.2", "violet", [ "h19.2", "v-77.2", "h182.4" ] ],
+    [ "ldr1:AO", "esp:34", "yellow", [ "v-0.7", "h96", "v-67.2" ] ],
+    [ "esp:2", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "led:A", "green", [ "v0" ] ],
+    [ "led:C", "esp:GND.2", "black", [ "h-47.6", "v-67.2", "v-19.2" ] ]
+  ],
+  "serialMonitor": { "collapse": false, "convertEol": true, "display": "terminal", "newline": "lf" },
+  "dependencies": {}
+}

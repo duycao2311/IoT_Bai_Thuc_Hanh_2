@@ -1,0 +1,11 @@
+.venv/
+.pio/
+.vscode/
+__pycache__/
+*.py[cod]
+.env
+*.log
+~$*.docx
+.env
+__pycache__/
+.venv/

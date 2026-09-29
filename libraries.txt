@@ -1,0 +1,3 @@
+DHT sensor library for ESPx
+PubSubClient
+ArduinoJson
